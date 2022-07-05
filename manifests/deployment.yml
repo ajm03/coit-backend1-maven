@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: javabackend01 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: javabackend01
+  template:
+    metadata:
+      labels:
+        app: javabackend01 
+    spec:
+      containers:
+        - name: javabackend01 
+          image: containerregistrytes02.azurecr.io/javabackend01
+          ports:
+          - containerPort: 80
